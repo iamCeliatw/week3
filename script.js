@@ -1,8 +1,8 @@
 "use strict";
 
-const overlay = document.querySelector(".overlay");
-const openMenu = document.querySelector(".desk-navbar");
-const btn = document.querySelector(".btn");
+let overlay = document.querySelector(".overlay");
+let openMenu = document.querySelector(".desk-navbar");
+let btn = document.querySelector(".btn");
 
 btn.addEventListener("click", function () {
   openMenu.classList.remove("hidden");
