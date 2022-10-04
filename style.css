@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.myweb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 0px;
+}
+.myweb h3 {
+  font-size: 20px;
+}
+.desk-navbar {
+  display: block;
+}
+
+.mobile-navbar {
+  align-items: center;
+  display: none;
+}
+
+.desk-navbar ul {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.desk-navbar ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 0px 10px;
+  font-size: 20px;
+}
+header {
+  height: 300px;
+  background-color: rgb(208, 233, 255);
+  margin-bottom: 10px;
+}
+header h1 {
+  text-align: center;
+  line-height: 300px;
+  font-size: 40px;
+}
+
+.promotion {
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.section {
+  flex: none;
+  width: 50%;
+  display: flex;
+  height: 50px;
+  background-color: rgb(183, 214, 241);
+  margin: 10px;
+  flex-basis: 47.8%;
+}
+.section img {
+  width: 80px;
+  flex: none;
+}
+.section p {
+  line-height: 50px;
+  font-size: 20px;
+  flex: none;
+  padding-left: 5px;
+}
+
+.list ul {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  flex-wrap: wrap;
+}
+.list ul li {
+  margin: 10px;
+  list-style: none;
+  font-size: 20px;
+  text-align: center;
+  /* background-color: aliceblue; */
+  position: relative;
+}
+/* .star {
+  padding: 5px;
+  position: absolute;
+  width: auto;
+  right: 0px;
+} */
+.spot img {
+  width: 270px;
+}
+
+.list p {
+  position: absolute;
+  bottom: 0px;
+  width: 270px;
+  height: 40px;
+  line-height: 40px; /*置中*/
+  padding: 1px 0px;
+  font-size: 16.8px;
+  background-color: rgb(204, 236, 255);
+}
+
+/*當螢幕寬度小於1200px時，套用此設定*/
+@media screen and (max-width: 1200px) {
+  .promotion {
+    flex-wrap: wrap;
+    width: 90%;
+  }
+
+  .section {
+    width: 45%;
+    flex-basis: 45%;
+  }
+  .list ul {
+    flex-wrap: wrap;
+    width: 90%;
+  }
+
+  .list ul li {
+    width: 45%;
+  }
+  .spot img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+  }
+  .list p {
+    position: absolute;
+    width: 100%;
+    font-size: 22px;
+  }
+}
+/*當螢幕寬度小於600px時，套用此設定*/
+@media screen and (max-width: 600px) {
+  .hidden {
+    display: none;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 2;
+  }
+  .desk-navbar {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: rgb(255, 246, 233);
+    animation-name: MoveToLeft; /*動畫名稱，需與 keyframe 名稱對應*/
+    animation-duration: 1s; /*動畫持續時間，單位為秒*/
+  }
+
+  @keyframes MoveToLeft {
+    from {
+      left: 100%;
+    }
+    to {
+      left: 50%;
+    }
+  }
+  .hamburger {
+    cursor: pointer;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+  }
+
+  .desk-navbar ul {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .desk-navbar ul li {
+    padding: 50px;
+    font-size: 23px;
+  }
+
+  .mobile-navbar {
+    display: block;
+  }
+  .section {
+    width: 90%;
+    flex-basis: 90%;
+  }
+  .list ul li {
+    width: 90%;
+  }
+}
+.star {
+  padding: 5px;
+  z-index: 1;
+}
+@media screen and (max-width: 370px) {
+  header h1 {
+    font-size: 30px;
+  }
+}
